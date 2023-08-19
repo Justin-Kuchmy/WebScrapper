@@ -2,7 +2,7 @@
 webscrapper to pull vocabulary words from one site, and another to add them to another. 
 
 
-## Screenshots LingoDeer
+## Screenshots LingoDeer (Red circles are Clicks)
 ### Root page with all the lessons <br />
 ![Screenshot of LingoDeer](https://github.com/Justin-Kuchmy/WebScrapper/blob/main/WebScreenShots/LingoOne.jpg)
 ### page two with link to vocab page<br />
