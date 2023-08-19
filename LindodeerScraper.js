@@ -45,26 +45,21 @@ const rl = readline.createInterface({
         for(const unitWrapElement of unitWrapElements)
         {
           unitName = await unitWrapElement.evaluate(el => el.textContent.trim());
-          console.log('looking for ', unitName);
           if (unitName === nameToFind) {
             foundElement = unitWrapElement;
-            console.log('found ', unitName);
             break; // Exit the loop once the element is found
 
           }
         }
         
         if (foundElement) {
-          console.log('clicking on', unitName);
           await foundElement.click();
           await new Promise(r => setTimeout(r, 1000)); 
           unitWrapElements = await page.$$('.topWrap .unitDetail .unitName');
 
           const parentDiv = await page.$('.unitDetailItemArea.vacabulary');
-          console.log('looking for parent');
           if (parentDiv) 
           {
-            console.log('found parent');
             const childDiv = await parentDiv.$('.wrap');
             await childDiv.click(`img[src="https://webjson.lingodeer.com/mediaSource/static/images/vocabularyPic/vocabulary.png"]`);
 
@@ -76,9 +71,7 @@ const rl = readline.createInterface({
           await page.goBack();
           await new Promise(r => setTimeout(r, 1000)); 
           unitWrapElements = await page.$$('.topWrap .unitDetail .unitName');
-        } else {
-          console.log(`No element found for '${nameToFind}'`);
-        }
+        } 
       }
       fs.writeFileSync('output.txt', pairs.join('\n'));
       browser.close();
@@ -106,6 +99,5 @@ async function saveTextToFile(page)
       const original = wdTxtText[i].trim();
       const translated = trText[i].trim();
       pairs.push(`${original} ${translated}`);
-      console.log(original, translated);
     }
 }
