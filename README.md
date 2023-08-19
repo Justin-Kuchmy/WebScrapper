@@ -13,6 +13,3 @@ webscrapper to pull vocabulary words from one site, and another to add them to a
 ## Screenshots Anki
 ### Uses text file with words to add them an Anki deck.<br />
 ![Screenshot of Anki](https://github.com/Justin-Kuchmy/WebScrapper/blob/main/WebScreenShots/Anki.jpg)
-
-## Anki Video
-![Video of Anki](https://github.com/Justin-Kuchmy/WebScrapper/blob/main/WebScreenShots/ankiVid.mp4)
